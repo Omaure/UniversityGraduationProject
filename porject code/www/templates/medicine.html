@@ -1,0 +1,56 @@
+<ion-view view-title="الأدوية" cache-view="false">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div>
+            <div ng-click="Add()">
+                <div class="item card-item">
+                    <div class="list center stable-bg">
+                        <a class="item item-avatar item-icon-right ">
+                            <div class="araby center"><h2> اضف دواء إلى قائمتك </h2></div>
+                            <div class="araby"><p></p></div>
+                            <i class="icon ion-plus-round dark "></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="flag">
+            <div class="list card">
+                <div class="item item-image">
+                    <img ng-src="{{thepic}}">
+
+                </div>
+                <div class="list araby">
+                    <button ng-click="takePicture()" class="button button-block button-calm">خذ صورة للدواء</button>
+                </div>
+                <div class="list ">
+
+                    <ion-md-input class=" list araby" placeholder="إسم الدواء" highlight-color="balanced" ng-model="InsertData.medName" type="text" class="text-center"></ion-md-input>
+                    <button ng-click="TimePicker()" class="button button-block button-calm  " style="text-align: center">اختر وقت تناول الدواء</button><br><br>
+                    <h4 class="araby center">أضف معلومات الإستخدام</h4>
+                    <ion-md-input class=" list araby" placeholder="حبة في الصباح" highlight-color="balanced" ng-model="InsertData.howToUse" type="text" class="text-center"></ion-md-input>
+                    <button ng-click="SaveNewMed(); scheduleDelayedNotification()" class="button button-block button-calm">أضف الدواء لقائمتي</button>
+
+                </div>
+                <div><br></div>
+            </div>
+        </div>
+
+
+        <div ng-if="AddedByUser!=null">
+
+            <div class="item card-item" ng-repeat="b in AddedByUser track by $index" class="repeat-item" ng-animate-children>
+                <div class="araby card card-gallery item">
+                    <!--<i class="icon ion-android-remove-circle stable" style="font-size: 180%" on-hold="removeItem($index)"> </i>-->
+                    <div class="ink dark-bg" style="color: #111111" ng-click="showActionsheet1($index)">
+                        <h2  style="font-weight: bold;font-size: 140%" class="Engl">{{b.title}}</h2>
+                        <img class="full-image no-resize" ng-src="data:image/png;base64,{{b.image}}">
+
+                    </div>
+
+                    <div class="text-center araby">
+
+    </ion-content>
+</ion-view>
+
+

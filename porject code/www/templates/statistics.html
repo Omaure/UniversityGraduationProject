@@ -1,0 +1,50 @@
+<ion-view view-title="إحصائيات">
+    <ion-content ng-class="{expanded:isExpanded}">
+
+
+        <div ng-if="readingsData == 0" >
+            <div class="item card-item">
+                <div class="card stable-bg ink ink-dark">
+                    <div class="item  item-text-wrap text-center  ">
+                        الرجاء ادخال قراءات للحصول على إحصائيات
+                    </div>
+                </div>
+            </div>
+
+            <div class="item card-item">
+                <div class="list center stable-bg">
+                    <a ui-sref="app.activity" class="item item-avatar item-icon-right ">
+                        <div class="araby center"> <h2>ادخال قراة جديدة </h2> </div>
+                        <div class="araby"> <p></p></div>
+                        <i class="icon ion-plus-round dark "></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="myDiv2" style="width: 100%; height: 400px" ng-class="{'hide':readingsData ==0}"></div>
+
+        <div ng-if="readingsData != 0">
+
+
+            <div class="item card-item" ng-repeat="x in readingsData track by $index" class="repeat-item" ng-animate-children>
+                <div class="card stable-bg ink ink-dark  item-icon-left item-icon-right" >
+                    <div ng-class="{'assertive-bg': x.reading=='عالي جدا', 'energized-bg': x.reading=='عالي',
+                    'balanced-bg': x.reading=='متوسط', 'calm-bg': x.reading=='منخفض','positive-bg': x.reading=='منخفض جدا'}">
+                        <div class="item item-text-wrap text-center "  >
+                            <i class="icon ion-android-remove-circle stable" style="font-size: 180%" on-hold="removeItem($index)"> </i>
+                            <div class="araby center light" style="font-size: 120%"> {{x.reading}}</div>
+                            <div class="araby center light"> <h4>{{x.time}} {{x.date}}</h4></div>
+                        </div>
+                        <i class="icon" style="font-size: 150%" ng-click="removeItem($index)">{{$index+1}}</i>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

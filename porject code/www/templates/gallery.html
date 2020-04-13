@@ -1,0 +1,117 @@
+<ion-view view-title="الأخبار">
+    <ion-content ng-class="{expanded:isExpanded}" >
+
+        <div class="item ">
+            <button ng-click="EnableN()" class="araby button button-small">الأخبار الطبية</button>
+            <button ng-click="EnableM()" class="araby button button-small">المقالات الطبية</button>
+            <button ng-click="EnableN2()" class="araby button button-small">النصائح الطبية</button>
+        </div>
+
+        <div ng-if="news==1">
+            <div class="item card-item" ng-repeat="x in News track by $index" class="repeat-item" ng-animate-children>
+                <div class="card card-gallery item"  >
+                    <div class="ink dark-bg araby" style="font-size: 120%; color: #111111">
+                        <h2>{{x.Title}}</h2>
+                        <img class="full-image" ng-click="ShowN($index)" ng-src={{x.Image}}>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div ng-if="NClick!=null ">
+            <div ng-click="EnableN()" class="item card-item">
+                <div class="item  item-text-wrap text-center  ">عودة إلى الصفحة الرئيسية</div>
+            </div>
+            <div  class="item card-item"  ng-animate-children>
+                <div class="card card-gallery item"  >
+                    <div class="ink dark-bg araby" style="font-size: 120%; color: #111111">
+                        <h2>{{News[NClick].Title}}</h2>
+                        <img class="full-image"   ng-src={{News[NClick].Image}}>
+
+                    </div>
+                    <div class="item  card-item item item-text-wrap araby">
+                        <br>
+                        <p >{{News[NClick].Text}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-->
+
+        <div ng-if="maqal==1">
+            <div class="item card-item" ng-repeat="x in Maqal track by $index" class="repeat-item" ng-animate-children>
+                <div class="card card-gallery item"  >
+                    <div class="ink dark-bg araby" style="font-size: 120%; color: #111111">
+                        <h2>{{x.Title}}</h2>
+                        <img class="full-image" ng-click="ShowM($index)" ng-src={{x.Image}}>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div ng-if="MClick!=null ">
+            <div ng-click="EnableM()" class="item card-item">
+                <div class="item  item-text-wrap text-center  ">عودة إلى الصفحة الرئيسية</div>
+            </div>
+            <div  class="item card-item"  ng-animate-children>
+                <div class="card card-gallery item"  >
+                    <div class="ink dark-bg araby" style="font-size: 120%; color: #111111">
+                        <h2>{{Maqal[MClick].Title}}</h2>
+                        <img class="full-image"   ng-src={{Maqal[MClick].Image}}>
+
+                    </div>
+                    <div class="item  card-item item item-text-wrap araby">
+                        <br>
+                        <p >{{Maqal[MClick].Text}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz-->
+        <div ng-if="nasaeh==1">
+            <div class="item card-item" ng-repeat="x in nasa2h track by $index" class="repeat-item" ng-animate-children>
+                <div class="card card-gallery item"  >
+                    <div class="ink dark-bg araby" style="font-size: 120%; color: #111111">
+                        <h2>{{x.Title}}</h2>
+                        <img class="full-image" ng-click="ShowN2($index)" ng-src={{x.Image}}>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div ng-if="N2Click!=null ">
+            <div ng-click="EnableN2()" class="item card-item">
+                <div class="item  item-text-wrap text-center  ">عودة إلى الصفحة الرئيسية</div>
+            </div>
+            <div  class="item card-item"  ng-animate-children>
+                <div class="card card-gallery item"  >
+                    <div class="ink dark-bg araby" style="font-size: 120%; color: #111111">
+                        <h2>{{nasa2h[N2Click].Title}}</h2>
+                        <img class="full-image"   ng-src={{nasa2h[N2Click].Image}}>
+
+                    </div>
+                    <div class="item  card-item item item-text-wrap araby">
+                        <br>
+                        <p >{{nasa2h[N2Click].Text}}</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </ion-content>
+</ion-view>
+
+
+
+
+

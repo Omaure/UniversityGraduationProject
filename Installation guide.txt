@@ -1,0 +1,9 @@
+
+
+To install the application on an android device:
+
+	- Copy android-debug.apk into the mobile phone
+	- Open the apk file using the phone file manager 
+	- Install the app
+
+

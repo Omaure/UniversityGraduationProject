@@ -1,0 +1,69 @@
+<ion-view view-title="وجبة مخصصة">
+    <ion-content ng-class="{expanded:isExpanded}" >
+
+
+
+        <div class="item card-item" >
+            <div  class="card  stable-bg  ink-dark   ">
+                <div class="item item-text-wrap  text-center" >
+                    اختر مقادير الوجبة ووزنها بالجرام لتقدير مستوى السكر بعد الأكل
+                    <br>
+                    بعض المقادير غير موجودة لعدم احتوائها على السكر
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="  ">
+            <div class="item-input" ng-repeat="input in inputs">
+
+                <div>{{input.volume}} {{input.ingred}}</div>
+
+                <div class="range">
+                    <i class="icon ion-android-restaurant" ng-click="showList($index)"> </i>
+                    <input type="range" min="0" max="500" ng-model="input.volume" value="250" >
+                </div>
+
+
+                <div class="button button-small icon button-balanced " ng-if="$index == inputs.length - 1" ng-click="addInput()" >
+                    <i class=" ion-plus"></i>
+                </div>
+                <button class="button button-small icon button-assertive " ng-if="$index != inputs.length - 1" ng-click="removeInput($index)">
+                    <i class=" ion-minus"></i>
+                </button>
+            </div>
+        </div>
+
+
+
+
+        <div class="row center ">
+            <div class="col">
+                <button class="button button-block balanced-bg" style=" font-size: 150%" ng-click="calculate()"> حساب الكمية </button>
+            </div>
+        </div>
+
+
+
+        <div class="item card-item" >
+            <div  class="card stable-bg ink-dark">
+                <div ng-class="{'assertive-bg': result=='عالي جدا', 'energized-bg': result=='عالي',
+                    'balanced-bg': result=='متوسط', 'calm-bg': result=='منخفض','positive-bg':result=='منخفض جدا'}">
+                    <h2 class="item item-text-wrap araby" style="text-align: right; overflow: inherit;text-overflow: inherit;white-space: normal;">
+                        القراءة الاخيرة للمستخدم هي:
+                        {{lastReading}}
+                        <br>
+                        {{result}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </ion-content>
+</ion-view>
+

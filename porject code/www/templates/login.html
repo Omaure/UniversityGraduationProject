@@ -1,0 +1,38 @@
+<ion-view view-title="معلومات المستخدم" align-title="left">>
+    <ion-content style="background: url(img/backgroundd.png) center; background-size: cover;">
+
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+                <h1>معلومات المستخدم</h1>
+            </div>
+        </div>
+
+        <div class="text-center araby">
+            <button class="button button-full button-border icon-left ion-ios-person-outline button-assertive-900" ng-click="showActionsheet()">العمر :             <a> {{age}}</a>
+            </button>
+        </div>
+
+
+        <div class="list  araby">
+            <ion-md-input placeholder="الوزن(كيلو)" highlight-color="balanced" ng-model="$parent.weight"
+                          hightlight-color="dark" type="tel" maxlength="3" ng-keyup="validateMaxLength($parent.weight)">
+
+            </ion-md-input>
+        </div>
+
+
+        <div class="text-center araby">
+            <button class="button button-full button-border icon-left ion-ios-heart button-assertive-900" ng-click="showActionsheet3()"> الحالة الصحية :            <a> {{type}}</a>
+            </button>
+        </div>
+
+
+    </ion-content>
+
+    <div id="footer" class="button-bar araby">
+        <a style="min-width: 50%;border-radius: 0px;" class="button button-balanced-900 icon-left ion-archive" ng-click="saveData()">حفظ المعلومات</a>
+        <a style="min-width: 50%;border-radius: 0px;"  class="button button-assertive-900 icon-left ion-android-delete" ng-click="removesomedata()">حذف المعلومات</a>
+    </div>
+
+</ion-view>

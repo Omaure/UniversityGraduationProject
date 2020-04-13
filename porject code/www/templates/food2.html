@@ -1,0 +1,79 @@
+<ion-view view-title=" ماذا يمكنني ان أتناول"">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+
+
+        <div class="list half">
+
+            <div class="card card-gallery item item-text-wrap araby"  >
+                <div class=" dark-bg araby">
+                    <h2>{{foodChosen}}</h2>
+                    <img class="full-image" src="{{foodPic}}">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="list half">
+            <br>
+
+            <div class="item card-item  " >    <!-- if tag item is removed no animation, if there no rtl-->
+                <div  class="card stable-bg  ink-dark  ">
+                    <div class="item item-text-wrap araby" style="text-align: right">
+                        <br>              تحتوي وجبة {{foodChosen}}
+                        على مستوى سكر {{info}}
+
+
+                        <!--في كل 100 جرام من {{foodChosen}} يوجد :                     <br>-->
+                        <!--100 جرام من البروتينات                     <br>-->
+                        <!--وونسبة سكر:                     <br>-->
+                        <!--و صوديوم:                     <br>-->
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+
+
+        <h4 class="content  araby item card-item"><strong>اختر حجم الصحن:</strong></h4>
+
+
+
+        <div class="list">
+            <div class="item range range-positive">
+                <i class="icon ion-minus"></i>
+                <input type="range" name="volume" min="0" max="2" value="1" ng-model="plate" ng-change="plateChanged(plate)">
+                <i class="icon ion-plus"></i>
+            </div>
+        </div>
+
+        <div class="center2" id="outer">
+            <div class="card card-gallery item item-text-wrap" id="inner" style="width:{{w}}; max-width:{{y}}">
+                <div class="dark-bg araby" style="font-size: 125%">
+                    <h2 style="font-size: 102%">{{platePicLabel}}</h2>
+                    <img class="full-image " ng-src="{{platePic}}">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="item card-item" >
+            <div  class="card light  ink-dark  ">
+                <div ng-class="{'assertive-bg': result=='عالي جدا', 'energized-bg': result=='عالي',
+                    'balanced-bg': result=='متوسط', 'calm-bg': result=='منخفض','positive-bg':result=='منخفض جدا'}">
+                    <h2 class="item item-text-wrap araby" style="text-align: right; overflow: inherit;text-overflow: inherit;white-space: normal;">
+                        القراءة الاخيرة للمستخدم هي:
+                        {{lastReading}}
+                        <br>
+                        تناول وجبة
+                        {{foodChosen}}
+
+                        سترفع مستوى السكر تقريبا الى:
+                        {{result}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

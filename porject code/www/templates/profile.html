@@ -1,0 +1,52 @@
+<ion-view view-title="Profile">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <ion-nav-view name="profile"></ion-nav-view>
+
+
+        <div class="hero slide-up" style="background-image: url('img/healthy.jpg');">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/foodcircle.jpg');"></div>
+                <h3><a class="lgiht">أهلا بك</a></h3>
+                <h4></h4>
+            </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.login" class="tab-item">
+                <i class="icon ion-information-circled"></i> تعديل البيانات
+            </a>
+
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-plus-round"></i>ادخال قراءة جديدة
+            </a>
+
+            <a ui-sref="app.statistics" class="tab-item">
+                <i class="icon ion-stats-bars"></i> إحصائيات
+            </a>
+        </div>
+
+        <div class="list animate-fade-slide-in-right">
+        <h4 class="content padding double-padding-x araby"> القائمة الرئيسية</h4>
+
+
+            <a ui-sref="app.food" class="item item-avatar item-icon-right">
+                <div class="araby"> <h2> ماذا يمكنني ان أتناول </h2> </div>
+                <div class="araby"> <p>تاثير تناول الطعام على السكر</p></div>
+                <i class="icon ion-spoon "></i>
+            </a>
+
+            <a ui-sref="app.medicine" class="item item-avatar item-icon-right">
+                <div class="araby"> <h2>نوع الدواء </h2> </div>
+                <div class="araby"> <p>مساعدة باختاير الدواء والتذكير بتناوله</p></div>
+                <i class="icon ion-medkit "></i>
+            </a>
+
+            <a ui-sref="app.gallery" class="item item-avatar item-icon-right">
+                <div class="araby"> <h2>الاخبار والمقالات </h2> </div>
+                <div class="araby"> <p>آخر الاخبار المتعلقة بالصحة</p></div>
+                <i class="icon ion-ios-paper "></i>
+            </a>
+
+
+        </div>
+    </ion-content>
+</ion-view>

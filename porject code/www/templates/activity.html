@@ -1,0 +1,59 @@
+<ion-view view-title="ادخال قراءة جديدة">
+    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
+
+
+
+        <div class="item card-item">
+            <div class="card stable-bg ink ink-dark">
+                <div class="item  item-text-wrap text-center  ">
+                    الرجاء اختيار القراءة الاخيرة لمستوى السكر
+                </div>
+            </div>
+        </div>
+
+
+        <div class="item card-item" >
+            <div class="card assertive-bg ink ink-dark light" ng-click="showConfirm('عالي جدا')">
+                <div class="item  item-text-wrap text-center" style="font-size: 120%">
+                    عالي جدا
+                </div>
+            </div>
+            <div class="card energized-bg ink ink-dark light" ng-click="showConfirm('عالي')">
+                <div class="item  item-text-wrap text-center" style="font-size: 120%">
+                    عالي
+                </div>
+            </div>
+            <div class="card balanced-bg ink ink-dark light" ng-click="showConfirm('متوسط')">
+                <div class="item  item-text-wrap text-center" style="font-size: 120%">
+                    متوسط
+                    </bold>
+                </div>
+            </div>
+            <div class="card calm-bg ink ink-dark light" ng-click="showConfirm('منخفض')">
+                <div class="item  item-text-wrap text-center" style="font-size: 120%">
+                    منخفض
+                </div>
+            </div>
+            <div class="card positive-bg ink ink-dark light" ng-click="showConfirm('منخفض جدا')">
+                <div class="item  item-text-wrap text-center" style="font-size: 120%">
+                    منخفض جدا
+                </div>
+            </div>
+        </div>
+
+
+        <br><br>
+
+
+        <div class="item card-item">
+            <div class="list center stable-bg">
+                <a ui-sref="app.statistics" class="item item-avatar item-icon-right ">
+                    <div class="araby center"> <h2>الذهاب الى الاحصائيات </h2> </div>
+                    <div class="araby"> <p>تحليلات لاخر القراءات</p></div>
+                    <i class="icon ion-stats-bars dark "></i>
+                </a>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
